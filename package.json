@@ -46,7 +46,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://mikeseven@github.com/mikeseven/node-image.git"
+    "url": "https://github.com/mikeseven/node-image.git"
   },
   "directories": {
     "src": "src",
@@ -54,12 +54,12 @@
     "test": "test"
   },
   "engines": {
-    "node": "0.5.9-0.11.3"
+    "node": "0.5.9-0.12.2"
   },
   "scripts": {
     "install": "node-gyp rebuild"
   },
   "dependencies": {
-    "nan": "^0.8.0"
+    "nan": "^1.2.0"
   }
 }

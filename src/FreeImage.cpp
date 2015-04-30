@@ -30,7 +30,7 @@ void FreeImage::Initialize(Handle<Object> target) {
   NanScope();
 
   // constructor
-  Local<FunctionTemplate> ctor = FunctionTemplate::New(FreeImage::New);
+  Local<FunctionTemplate> ctor = FunctionTemplate::New(v8::Isolate::GetCurrent(),FreeImage::New);
   ctor->InstanceTemplate()->SetInternalFieldCount(1);
   ctor->SetClassName(JS_STR("FreeImage"));
 
@@ -135,7 +135,7 @@ NAN_METHOD(FreeImage::save) {
     image=FreeImage_ConvertTo24Bits(image);
     FreeImage_Unload(old);
   }
-  NanReturnValue(Boolean::New((FreeImage_Save(format, image, *filename) == TRUE) ? true : false));
+  NanReturnValue(Boolean::New(v8::Isolate::GetCurrent(),(FreeImage_Save(format, image, *filename) == TRUE) ? true : false));
 }
 
 }

@@ -28,7 +28,7 @@ void Image::Initialize(Handle<Object> target) {
   NanScope();
 
   // constructor
-  Local<FunctionTemplate> ctor = FunctionTemplate::New(Image::New);
+  Local<FunctionTemplate> ctor = FunctionTemplate::New(v8::Isolate::GetCurrent(),Image::New);
   ctor->InstanceTemplate()->SetInternalFieldCount(1);
   ctor->SetClassName(JS_STR("Image"));
 
